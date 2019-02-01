@@ -3,12 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row" />
-      </div>
+      <React.Fragment> 
+        <h3>Hello from App</h3>
+      </React.Fragment>
     );
   }
 }
