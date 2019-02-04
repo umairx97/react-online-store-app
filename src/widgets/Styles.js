@@ -29,3 +29,8 @@ export const NavWrapper = styled.nav`
     text-transform: capitalize;
   }
 `;
+
+export const ProductWrapper = styled.div `
+  
+
+`
