@@ -13,7 +13,6 @@ class ProductProvider extends Component {
   componentDidMount() {
     this.setProducts();
   }
-  
 
   setProducts = () => {
     let products = [];
@@ -32,8 +31,8 @@ class ProductProvider extends Component {
     console.log("hello from detail");
   };
 
-  addToCart = () => {
-    console.log("hello from add to cart");
+  addToCart = id => {
+    console.log("hello from add to cart id is:" + id);
   };
 
   render() {
