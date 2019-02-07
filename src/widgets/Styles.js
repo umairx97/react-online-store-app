@@ -61,6 +61,7 @@ export const ProductWrapper = styled.div`
     transition: all 0.5s linear;
   }
 
+  
   .img-container:hover .card-img-top {
     transform: scale(1.2);
   }
