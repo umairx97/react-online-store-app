@@ -31,7 +31,7 @@ export default class Details extends Component {
               {/* Product Info */}
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3">
-                  <img src={img} alt="Product Image" className="img-fluid" />
+                  <img src={img} alt={title} className="img-fluid" />
                 </div>
 
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
@@ -56,7 +56,7 @@ export default class Details extends Component {
                   {/* Buttons */}
                   <div>
                     <Link to="/">
-                      <ButtonContainer> Back To Products</ButtonContainer>
+                      <ButtonContainer>Back To Products</ButtonContainer>
                     </Link>
 
                     <ButtonContainer
@@ -64,6 +64,7 @@ export default class Details extends Component {
                       disabled={inCart ? true : false}
                       onClick={() => {
                         value.addToCart(id);
+                        value.openModal(id);
                       }}
                     >
                       {inCart ? "In Cart" : "Add to cart"}
