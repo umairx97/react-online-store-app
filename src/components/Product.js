@@ -45,7 +45,7 @@ export default class Product extends Component {
 
           {/* Card footer */}
 
-          <div className="card-footer d-flex justify-content-between bg-danger">
+          <div className="card-footer d-flex justify-content-between bg-info">
             <p className="align-self-center mb-0 text-light">{title}</p>
             <h5 className="text-blue font-italic mb-0 text-light">
               {" "}
