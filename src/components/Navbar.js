@@ -9,7 +9,7 @@ export default class Navbar extends Component {
           {/* <img src={logo} alt="store" className="navbar-brand" /> */}
           <i
             className="fas fa-store"
-            style={{ color: "red", "font-size": "2rem" }}
+            style={{ color: "red", fontSize: "2rem" }}
           />
         </Link>
 

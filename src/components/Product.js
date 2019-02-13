@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
 import { ProductWrapper } from "../widgets/Styles";
 import PropTypes from "prop-types";
 
+// Renders a product card based on id
 export default class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;

@@ -13,6 +13,7 @@ export default class ProductList extends Component {
             <div className="row">
               <ProductConsumer>
                 {value => {
+                  // Takes a id and passes it to product component
                   return value.products.map(product => {
                     return <Product key={product.id} product={product} />;
                   });
