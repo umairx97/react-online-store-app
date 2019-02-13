@@ -26,24 +26,32 @@ body {
   color: var(--LightBlue);
 }
 
-.btn-black { 
-  background: transparent; 
-  text-transform: capitalize; 
-  font-size: 0.8rem !important; 
-  color: var(--mainDark); 
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
   border-radius: 0 !important;
-  border: 0.1rem solid  var(--mainDark) !important;
-
+  border: 0.1rem solid var(--mainDark) !important;
 }
 
-.btn-black:hover { 
-  background: var(--mainDark) !important; 
-  color: var(--mainWhite) !important; 
+.btn-black:hover {
+  background: var(--mainDark) !important;
+  color: var(--mainWhite) !important;
 }
 
-.cart-icon { 
+.cart-icon {
   cursor: pointer;
-  font-size: 1.2rem; 
-  color: var(--mainYellow); 
-  
+  font-size: 1.2rem;
+  color: var(--mainYellow);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--mainBlue);
+  color: white;
+  text-align: center;
 }

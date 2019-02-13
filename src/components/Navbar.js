@@ -7,16 +7,16 @@ export default class Navbar extends Component {
       <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <Link to="/">
           {/* <img src={logo} alt="store" className="navbar-brand" /> */}
-          <i className="fas fa-store" style={{ color: "red" }} />
+          <i
+            className="fas fa-store"
+            style={{ color: "red", "font-size": "2rem" }}
+          />
         </Link>
-        <ul className="navbar-nav align-items-center">
-          <li className="nav-item ml-5">
-            <Link to="/" className="nav-link">
-              {" "}
-              Products
-            </Link>
-          </li>
-        </ul>
+
+        <Link to="/" className="nav-link align-items-center ml-1">
+          {" "}
+          Products
+        </Link>
 
         <Link to="/cart" className="ml-auto">
           <ButtonContainer>
@@ -31,4 +31,3 @@ export default class Navbar extends Component {
     );
   }
 }
-

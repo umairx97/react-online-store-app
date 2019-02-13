@@ -11,7 +11,7 @@ export default class Default extends Component {
             <h1>error</h1>
             <h5>Page Not found</h5>
             <hr style={{ border: "solid 1px black" }} />
-            
+
             <h3>
               The Requestd URL{" "}
               <span className="text-danger">

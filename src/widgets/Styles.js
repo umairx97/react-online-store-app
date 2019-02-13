@@ -12,7 +12,7 @@ border-radius: 0.5rem;
 padding: 0.2rem 0.5rem; 
 cursor: pointer;
 margin: 0.2rem 0.5rem 0.2rem 0;
-transition: all 0.5s ease-in-out; 
+transition: all 0.3s ease-in-out; 
 
 &:hover { 
   background: ${prop => (prop.cart ? "var(--mainYellow)" : "var(--LightBlue)")};
@@ -35,7 +35,7 @@ export const NavWrapper = styled.nav`
 export const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
   }
 
   .card-footer {
@@ -60,7 +60,7 @@ export const ProductWrapper = styled.div`
   }
 
   .card-img-top {
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
   }
 
   .img-container:hover .card-img-top {
@@ -78,7 +78,7 @@ export const ProductWrapper = styled.div`
     font-size: 1.4rem;
     border-radius: 0.5rem 0 0 0;
     transform: translate(100%, 100%);
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
   }
 
   .img-container:hover .cart-btn {
