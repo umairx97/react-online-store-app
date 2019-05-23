@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 // Components
 import "./App.css";
@@ -11,16 +11,34 @@ import Details from "./components/Details";
 import Default from "./components/default";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
+import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
+
+const PrivateRoute = ({ component: Component, loggedIn, ...rest, }) => {
+  return (
+    <Route
+      {...rest}
+      render={props => loggedIn ? (<Component {...props} />) : (<Redirect to={{ pathname: '/', state: { from: props.location } }} />)}
+    />
+
+  )
+}
 class App extends Component {
   render() {
+
+
+    const data = JSON.parse(localStorage.getItem('currentUser'))
+
     return (
       <React.Fragment>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Navbar />
         <Switch>
-          <Route exact path="/" component={ProductList} />
-          <Route path="/details" component={Details} />
-          <Route path="/cart" component={Cart} />
+          <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/products" component={ProductList} />
+          <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/details" component={Details} />
+          <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/cart" component={Cart} />
           <Route component={Default} />
         </Switch>
         <Footer />

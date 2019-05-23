@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { ButtonContainer, NavWrapper } from "../widgets/Styles";
+import swal from 'sweetalert';
+
 export default class Navbar extends Component {
+
+  signout = async () => { 
+    const data = JSON.parse(localStorage.getItem('currentUser'));
+    
+    if(data){ 
+       await localStorage.removeItem('currentUser')
+       swal("Goodbye", "Thanks for shopping with us", "success");
+       this.props.history.push('/')
+    }
+  }
   render() {
     return (
       <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
@@ -26,6 +38,14 @@ export default class Navbar extends Component {
             </span>
             My Cart
           </ButtonContainer>
+
+          <button
+                className="btn btn-danger text-uppercase mb-2 px-3"
+                type="button"
+                onClick = {this.signout}
+              >
+                Signout
+              </button>
         </Link>
       </NavWrapper>
     );
