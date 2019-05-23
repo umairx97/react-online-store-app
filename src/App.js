@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart/Cart";
 import Details from "./components/Details";
-import Default from "./components/default";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 import Login from './components/Login/Login'
@@ -34,14 +33,12 @@ class App extends Component {
       <React.Fragment>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
-        <Navbar />
         <Switch>
           <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/products" component={ProductList} />
           <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/details" component={Details} />
           <PrivateRoute loggedIn = {(data && data.hasOwnProperty('username'))}  exact path="/cart" component={Cart} />
-          <Route component={Default} />
         </Switch>
-        <Footer />
+        {data && data.hasOwnProperty('username') && <Footer />}
         <Modal />
       </React.Fragment>
     );

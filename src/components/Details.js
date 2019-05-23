@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
 import { ButtonContainer } from "../widgets/Styles";
+import Navbar from "./Navbar";
 
 export default class Details extends Component {
   render() {
     return (
+      <React.Fragment>
+        <Navbar/>
       <ProductConsumer>
         {value => {
           const {
@@ -19,6 +22,7 @@ export default class Details extends Component {
           } = value.detailProduct;
 
           return (
+          
             <div className="container py-5">
               {/* Title */}
               <div className="row">
@@ -76,6 +80,7 @@ export default class Details extends Component {
           );
         }}
       </ProductConsumer>
+      </React.Fragment>
     );
   }
 }

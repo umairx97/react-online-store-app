@@ -71,8 +71,37 @@ export default class Login extends Component {
     }
     const user = JSON.parse(localStorage.getItem('regUser'))
 
+    if (user === null) {
 
-    if (user && user.username) {
+      const checkedUser = this.state.users.filter(user => {
+        return username === user.username && password === user.password
+      })
+
+      console.log(checkedUser)
+
+
+      if (checkedUser.length) {
+        localStorage.setItem('currentUser', JSON.stringify(checkedUser[0]));
+
+        this.setState({
+          successMessage: 'Very good',
+          errors
+
+        })
+        this.props.history.push('/products')
+
+      } else {
+        errors.serverError = "Invalid Username or Password";
+        this.setState({
+          errors,
+          isAuth: false,
+          successMessage: ''
+        })
+      }
+
+
+    } else if (user && user.username) {
+
       this.setState({
         users: [user, ...this.state.users]
       }, () => {
@@ -80,7 +109,6 @@ export default class Login extends Component {
         const checkedUser = this.state.users.filter(user => {
           return username === user.username && password === user.password
         })
-
 
         if (checkedUser.length) {
           localStorage.setItem('currentUser', JSON.stringify(checkedUser[0]));
@@ -101,11 +129,10 @@ export default class Login extends Component {
           })
         }
 
-
       })
 
-    }
-  };
+    };
+  }
 
   render() {
 

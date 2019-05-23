@@ -6,10 +6,13 @@ import EmptyCart from "./EmptyCart";
 import { ProductConsumer } from "../../context";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
+import Navbar from "../Navbar";
 
 export default class Cart extends Component {
   render() {
     return (
+      <React.Fragment>
+        <Navbar/>
       <section>
         <ProductConsumer>
           {value => {
@@ -33,6 +36,7 @@ export default class Cart extends Component {
           }}
         </ProductConsumer>
       </section>
+      </React.Fragment>
     );
   }
 }
